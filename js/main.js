@@ -118,8 +118,8 @@
 
     var pin = document.createElement('div');
     pin.className = 'pin';
-    pin.innerHTML = '<div class="pin__pulse"></div><div class="pin__dot"><svg viewBox="0 0 546.724 229.281" aria-hidden="true"><use href="#kfg-mark"/></svg></div>';
-    var marker = new M.Marker({ element: pin }).setLngLat(LNGLAT).addTo(map);
+    pin.innerHTML = '<div class="pin__pulse"></div><div class="pin__body"></div><svg class="pin__logo" viewBox="0 0 546.724 229.281" aria-hidden="true"><use href="#kfg-mark"/></svg>';
+    var marker = new M.Marker({ element: pin, anchor: 'bottom' }).setLngLat(LNGLAT).addTo(map);
 
     // Ajusta la posición con la dirección real (OpenStreetMap Nominatim)
     fetch('https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=es&q=' +

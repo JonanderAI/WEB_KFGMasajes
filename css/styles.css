@@ -104,7 +104,6 @@ ul,ol{padding:0;list-style:none}
 .card--glass{background:rgba(255,255,255,.14);color:#fff}
 .card__top{display:flex;justify-content:space-between;align-items:flex-start}
 .card__ico{width:40px}
-.card__n{font-size:14px;opacity:.7}
 .card__body{display:flex;flex-direction:column;gap:12px;flex:1}
 .card__title{font-weight:500;font-size:clamp(26px,2.6vw,32px);letter-spacing:-.025em;line-height:1.05}
 .card__body p{font-weight:300;font-size:17px;line-height:1.5;opacity:.92}
@@ -147,9 +146,6 @@ ul,ol{padding:0;list-style:none}
 .hours__days .is-today{background:#fff;color:var(--abismo);font-weight:600;opacity:1}
 
 /* contacto */
-.rule{display:flex;align-items:center;gap:16px;margin-top:8px}
-.rule h3{font-weight:500;font-size:clamp(28px,3vw,40px);letter-spacing:-.03em}
-.rule span{flex:1;height:1px;background:rgba(10,31,30,.18)}
 
 /* mapa */
 .map{position:relative;border-radius:var(--r-card);overflow:hidden;background:var(--cristal);height:460px;margin-top:-12px}
@@ -166,11 +162,12 @@ ul,ol{padding:0;list-style:none}
 .maplibregl-map{font-family:Outfit,sans-serif}
 .maplibregl-ctrl-group{background:none!important;box-shadow:none!important;display:flex;flex-direction:column;gap:8px}
 .maplibregl-ctrl-group button{width:44px!important;height:44px!important;border-radius:50%!important;border:0!important;background-color:#fff!important;box-shadow:0 6px 18px rgba(10,31,30,.15)!important}
-.pin{position:relative;width:76px;height:76px}
-.pin__pulse{position:absolute;inset:0;border-radius:50%;background:var(--lago);animation:kfgpulse 2s ease-out infinite}
-.pin__dot{position:absolute;inset:6px;border-radius:50%;background:var(--abismo);box-shadow:0 8px 20px rgba(10,31,30,.35);display:flex;align-items:center;justify-content:center;color:#fff}
-.pin__dot svg{width:40px;height:auto;aspect-ratio:546.724/229.281;fill:currentColor}
-@keyframes kfgpulse{0%{transform:scale(.6);opacity:.7}100%{transform:scale(2.2);opacity:0}}
+.pin{position:relative;width:64px;height:68px;cursor:pointer}
+.pin__pulse{position:absolute;left:50%;bottom:0;width:44px;height:44px;margin:0 0 -22px -22px;border-radius:50%;background:var(--lago);animation:kfgpulse 2.2s ease-out infinite}
+.pin__body{position:absolute;left:4px;top:0;width:56px;height:56px;background:var(--abismo);border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 0 0 3px #fff,0 12px 24px rgba(10,31,30,.35);transition:transform .35s var(--ease)}
+.pin__logo{position:absolute;left:32px;top:28px;width:32px;height:auto;aspect-ratio:546.724/229.281;transform:translate(-50%,-50%);fill:#fff;color:#fff}
+.pin:hover .pin__body{transform:rotate(-45deg) scale(1.06)}
+@keyframes kfgpulse{0%{transform:scale(.5);opacity:.7}100%{transform:scale(2.4);opacity:0}}
 
 /* pie */
 .footer{background:var(--espuma)}
@@ -207,11 +204,6 @@ ul,ol{padding:0;list-style:none}
   .grid .card:hover,.card--link:hover,.btn:hover{transform:none}
 }
 
-/* nav: botón Pedir cita */
-.nav__cta{display:flex;align-items:center;gap:12px;background:var(--lago);color:#fff;font-weight:500;padding:5px 5px 5px 20px;border-radius:var(--r-btn);transition:background .25s,transform .35s var(--ease)}
-.nav a.nav__cta:hover{background:var(--abismo);color:#fff;transform:translateY(-2px)}
-.nav__dot{width:34px;height:34px;border-radius:50%;background:#fff;color:var(--lago);display:flex;align-items:center;justify-content:center}
-
 /* estado abierto/cerrado */
 .status{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;background:rgba(255,255,255,.14);border-radius:var(--r-btn);padding:8px 18px 8px 14px;font-size:15px;font-weight:500}
 .status[hidden]{display:none}
@@ -240,5 +232,42 @@ ul,ol{padding:0;list-style:none}
 }
 
 @media (max-width:640px){
-  .nav a:not(.nav__cta){display:none}
+}
+
+/* tarjetas de servicio (enlaces a WhatsApp) */
+.card--svc{color:inherit;text-decoration:none}
+.card--svc.card--lago{color:#fff}
+.card--svc.card--abismo{color:var(--espuma)}
+.card--svc .badge{width:60px;height:60px}
+.badge--glass{color:#fff}
+.card--abismo.card--link:hover .arrow{background:var(--lago);border-color:var(--lago)}
+
+/* reserva: dos tarjetas */
+.cards--two .card--link{flex-basis:calc(50% - 8px);min-height:clamp(190px,17vw,240px)}
+
+/* centro: dirección + redes a la izquierda, mapa a la derecha */
+.centro{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--gap);align-items:stretch}
+.centro__side{display:flex;flex-direction:column;gap:var(--gap)}
+.centro__side .card--static{flex:1;min-height:200px}
+.centro__social{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+.centro__social .card--link{min-height:190px;padding:24px;gap:28px}
+.centro .map{margin-top:0;height:auto;min-height:460px}
+@media (max-width:900px){
+  .centro{grid-template-columns:1fr}
+  .centro .map{min-height:420px}
+}
+@media (max-width:520px){
+  .centro__social{grid-template-columns:1fr}
+  .cards--two .card--link{flex-basis:100%}
+}
+
+/* horario en móvil: 2 columnas, el domingo a todo el ancho */
+@media (max-width:640px){
+  .hours{padding:14px}
+  .hours__title{padding-left:6px}
+  .hours__days{grid-template-columns:1fr 1fr;flex-basis:100%}
+  .hours__days li:last-child{grid-column:1/-1}
+}
+@media (max-width:520px){
+  .centro__social .card--link{min-height:150px}
 }
