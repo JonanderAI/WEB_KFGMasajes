@@ -6,6 +6,53 @@
   var today = (new Date().getDay() + 6) % 7; // 0 = lunes
   if (days[today]) days[today].classList.add('is-today');
 
+  /* ---- Estado abierto / cerrado ---- */
+  var status = document.getElementById('status');
+  if (status) {
+    var now = new Date();
+    var d = now.getDay(), m = now.getHours() * 60 + now.getMinutes();
+    var open = d >= 1 && d <= 5 && m >= 540 && m < 1200;
+    status.className = 'status' + (open ? ' is-open' : '');
+    status.querySelector('span').textContent = open
+      ? 'Abierto ahora · hasta las 20:00'
+      : 'Cerrado ahora · L–V 09:00 a 20:00';
+    status.hidden = false;
+  }
+
+  /* ---- Barra fija de contacto en móvil: aparece al pasar la portada ---- */
+  var dock = document.getElementById('dock');
+  var hero = document.querySelector('.hero');
+  if (dock && hero && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) {
+      dock.classList.toggle('is-on', !e[0].isIntersecting);
+    }, { threshold: 0 }).observe(hero);
+  }
+
+  /* ---- Aparición suave al hacer scroll ---- */
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !reduce) {
+    document.documentElement.classList.add('js');
+    var targets = document.querySelectorAll('.section__head, .card, .hours, .rule, .map');
+    var ro = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var el = en.target;
+        ro.unobserve(el);
+        el.classList.add('in');
+        setTimeout(function () {
+          el.classList.remove('reveal', 'in');
+          el.style.transitionDelay = '';
+        }, 1000);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    targets.forEach(function (el, i) {
+      el.classList.add('reveal');
+      var col = el.classList.contains('card') ? i % 3 : 0;
+      el.style.transitionDelay = (col * 90) + 'ms';
+      ro.observe(el);
+    });
+  }
+
   /* ---- Mapa (OpenFreeMap + MapLibre), se carga al acercarse a la sección ---- */
   var mapEl = document.getElementById('map');
   if (!mapEl) return;

@@ -84,7 +84,7 @@
       <nav class="nav" aria-label="Principal">
         <a href="#servicios">Servicios</a>
         <a href="#centro">Contacto</a>
-        <a href="#cita">Citas</a>
+        <a class="nav__cta" href="#cita">Pedir cita<span class="nav__dot"><svg class="ico" style="width:18px" stroke-width="2.4"><use href="#i-arrow-down"/></svg></span></a>
       </nav>
     </div>
 
@@ -182,6 +182,7 @@
     <div class="section__head section__head--light">
       <h2 class="h2">Reserva tu <span class="menta">cita</span></h2>
       <p class="section__lead">Escríbenos por WhatsApp o llama. Atendemos con cita previa.</p>
+      <p class="status" id="status" hidden><i></i><span></span></p>
     </div>
 
     <div class="stack-16">
@@ -374,6 +375,11 @@
     </div>
   </div>
 </footer>
+
+<div class="dock" id="dock" aria-label="Contacto rápido">
+  <a class="dock__call" href="tel:+34640046600"><svg class="ico" style="width:22px"><use href="#i-phone"/></svg>Llamar</a>
+  <a class="dock__wa" href="https://wa.me/34640046600" target="_blank" rel="noopener"><svg class="ico" style="width:22px"><use href="#i-chat"/></svg>WhatsApp</a>
+</div>
 
 <script src="js/main.js" defer></script>
 </body>
