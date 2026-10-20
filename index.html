@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KFG Masajes · Quiromasaje y osteopatía en Sodupe</title>
+<meta name="description" content="Quiromasaje y osteopatía en Sodupe (Encartaciones, Bizkaia). Masaje deportivo, relajante, terapéutico y holístico con cita previa de lunes a viernes. Tel. 640 046 600.">
+<meta name="theme-color" content="#1F7A73">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preload" href="fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/styles.css">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="KFG Masajes · Quiromasaje y osteopatía en Sodupe">
+<meta property="og:description" content="Manos que cuidan. Cita previa de lunes a viernes, de 09:00 a 20:00.">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="img/cita.webp">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "name": "KFG Masajes",
+  "description": "Quiromasaje y osteopatía en Sodupe, con cita previa.",
+  "telephone": "+34640046600",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Autonomia Kalea, 22, Bajo",
+    "postalCode": "48830",
+    "addressLocality": "Sodupe",
+    "addressRegion": "Bizkaia",
+    "addressCountry": "ES"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "20:00"
+  }],
+  "sameAs": ["https://www.instagram.com/kfgmasajes/"]
+}
+</script>
+</head>
+<body>
+
+<!-- Símbolos reutilizables -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="kfg-mark" viewBox="0 0 546.724 229.281">
+    <path d="M0 229.281 L0 0 L45 0 L45 92.141 L70.636 92.141 C91.606 92.141 108.605 75.141 108.605 54.172 L108.605 0 L153.605 0 L153.605 54.172 C153.605 78.014 143.548 99.507 127.446 114.641 C143.548 129.774 153.605 151.267 153.605 175.109 L153.605 229.281 L108.605 229.281 L108.605 175.109 C108.605 154.14 91.606 137.141 70.636 137.141 L45 137.141 L45 229.281 Z"/>
+    <path d="M196.552 92.141 L350.948 92.141 L350.948 137.141 L241.552 137.141 L241.552 229.281 L196.552 229.281 Z M195.776 45 L195.776 0 L350.948 0 L350.948 45 Z"/>
+    <path d="M546.724 114.774 L546.724 161.766 C546.724 199.053 515.802 229.281 477.656 229.281 L462.171 229.281 C424.026 229.281 393.103 199.053 393.103 161.766 L393.103 67.515 C393.103 30.228 424.026 0 462.171 0 L477.656 0 C515.802 0 546.724 30.228 546.724 67.515 L546.724 69.496 L501.724 69.496 L501.724 67.515 C501.724 55.08 490.949 45 477.656 45 L462.171 45 C448.879 45 438.103 55.08 438.103 67.515 L438.103 161.766 C438.103 174.201 448.879 184.281 462.171 184.281 L477.656 184.281 C490.949 184.281 501.724 174.201 501.724 161.766 L501.724 137.274 L479.342 137.274 L479.342 92.274 L546.724 92.274 Z"/>
+  </symbol>
+  <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M6 18L18 6M9 6H18V15"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5V19M6 13L12 19L18 13"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5H20V16H11L6 20V16H4Z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="3"/><path d="M11 18H13"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><circle cx="12" cy="9" r="2"/><path d="M12 15V21"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6V12L16 14"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7H17.01"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M15 3H13C10.8 3 9 4.8 9 7V10H6V14H9V21H13V14H16L17 10H13V7C13 6.4 13.4 6 14 6H15Z"/></symbol>
+  <symbol id="s-sport" viewBox="0 0 24 24"><path d="M3 12H7L10 5L14 19L17 12H21"/></symbol>
+  <symbol id="s-relax" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12H16"/></symbol>
+  <symbol id="s-therapy" viewBox="0 0 24 24"><path d="M12 4V20M4 12H20"/></symbol>
+  <symbol id="s-holistic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></symbol>
+  <symbol id="s-quiro" viewBox="0 0 24 24"><path d="M12 3V21M8 6H16M8 12H16M8 18H16"/></symbol>
+  <symbol id="s-osteo" viewBox="0 0 24 24"><path d="M12 3L21 8V12C21 17 17 20 12 21C7 20 3 17 3 12V8Z"/></symbol>
+</svg>
+
+<a class="skip" href="#servicios">Saltar al contenido</a>
+
+<!-- ============ PORTADA ============ -->
+<header class="hero">
+  <img class="hero__photo" src="img/hero.webp" alt="" width="365" height="510" fetchpriority="high">
+  <div class="hero__veil"></div>
+  <div class="blob blob--menta" style="width:680px;height:680px;left:-200px;top:-240px;opacity:.5"></div>
+  <div class="blob blob--bruma" style="width:620px;height:620px;right:-200px;bottom:-200px;opacity:.55"></div>
+
+  <div class="hero__inner">
+    <div class="topbar">
+      <a class="logo" href="#top" aria-label="KFG Masajes, inicio" style="--logo:130px">
+        <svg class="logo__mark" aria-hidden="true"><use href="#kfg-mark"/></svg>
+        <span class="logo__text">Masajes</span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#centro">Contacto</a>
+        <a href="#cita">Citas</a>
+      </nav>
+    </div>
+
+    <div class="hero__body" id="top">
+      <h1 class="hero__title">Manos<br><span class="light">que</span> <span class="accent">cuidan</span></h1>
+      <div class="hero__row">
+        <p class="hero__lead">Quiromasaje y osteopatía en Sodupe, con cita previa de lunes a viernes.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--lago" href="#cita">Pedir cita
+            <span class="btn__dot"><svg class="ico" style="width:24px" stroke-width="2.4"><use href="#i-arrow-down"/></svg></span>
+          </a>
+          <a class="btn btn--abismo" href="https://wa.me/34640046600" target="_blank" rel="noopener">WhatsApp
+            <span class="btn__dot"><svg class="ico" style="width:24px" stroke-width="2.2"><use href="#i-chat"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ SERVICIOS ============ -->
+<section id="servicios" class="section section--white">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 class="h2">Servicios</h2>
+      <p class="section__sub">Sesiones con cita previa, adaptadas a lo que necesites.</p>
+    </div>
+
+    <div class="grid">
+      <article class="card card--lago">
+        <div class="card__top"><svg class="ico card__ico" stroke="#fff"><use href="#s-sport"/></svg><span class="card__n">01</span></div>
+        <div class="card__body">
+          <h3 class="card__title">Masaje deportivo</h3>
+          <p>Trabajo muscular orientado a preparar el cuerpo antes del ejercicio y a favorecer la recuperación después.</p>
+        </div>
+        <ul class="tags"><li>Antes del deporte</li><li>Recuperación</li><li>Sobrecargas</li></ul>
+      </article>
+
+      <article class="card card--espuma">
+        <div class="card__top"><svg class="ico card__ico" stroke="#1F7A73"><use href="#s-relax"/></svg><span class="card__n">02</span></div>
+        <div class="card__body">
+          <h3 class="card__title">Masaje relajante</h3>
+          <p>Un masaje suave y envolvente que ayuda a aliviar el estrés, reducir la tensión acumulada y favorecer un estado profundo de relajación y bienestar.</p>
+        </div>
+        <ul class="tags"><li>Estrés diario</li><li>Cuello y hombros</li><li>Espalda</li><li>Descanso</li></ul>
+      </article>
+
+      <article class="card card--cielo">
+        <div class="card__top"><svg class="ico card__ico" stroke="#1F7A73"><use href="#s-therapy"/></svg><span class="card__n">03</span></div>
+        <div class="card__body">
+          <h3 class="card__title">Masaje terapéutico</h3>
+          <p>Trabajo dirigido a las zonas con tensión, contracturas o molestias musculares.</p>
+        </div>
+        <ul class="tags"><li>Contracturas</li><li>Dolor muscular</li><li>Tensión acumulada</li></ul>
+      </article>
+
+      <article class="card card--cristal">
+        <div class="card__top"><svg class="ico card__ico" stroke="#1F7A73"><use href="#s-holistic"/></svg><span class="card__n">04</span></div>
+        <div class="card__body">
+          <h3 class="card__title">Masaje holístico</h3>
+          <p>Sesión de cuerpo entero con un ritmo pausado, pensada para aliviar la tensión física y mental.</p>
+        </div>
+        <ul class="tags"><li>Cuerpo entero</li><li>Calma</li><li>Bienestar</li></ul>
+      </article>
+
+      <article class="card card--espuma">
+        <div class="card__top"><svg class="ico card__ico" stroke="#1F7A73"><use href="#s-quiro"/></svg><span class="card__n">05</span></div>
+        <div class="card__body">
+          <h3 class="card__title">Quiromasaje</h3>
+          <p>Masaje manual de los tejidos blandos para aliviar la tensión muscular y mejorar la circulación.</p>
+        </div>
+        <ul class="tags"><li>Espalda</li><li>Piernas cansadas</li><li>Circulación</li></ul>
+      </article>
+
+      <article class="card card--abismo">
+        <div class="card__top"><svg class="ico card__ico" stroke="#8CC3DD"><use href="#s-osteo"/></svg><span class="card__n">06</span></div>
+        <div class="card__body">
+          <h3 class="card__title">Osteopatía</h3>
+          <p>Terapia manual que trabaja la movilidad de articulaciones y tejidos para mejorar el funcionamiento del cuerpo.</p>
+        </div>
+        <ul class="tags"><li>Postura</li><li>Movilidad</li><li>Dolor de espalda</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CITA ============ -->
+<section id="cita" class="section section--lago">
+  <img class="cita__photo" src="img/cita.webp" alt="" width="680" height="434" loading="lazy">
+  <div class="blob blob--bruma" style="width:620px;height:620px;right:-180px;top:-220px;opacity:.5"></div>
+  <div class="blob blob--menta" style="width:520px;height:520px;left:-200px;bottom:-240px;opacity:.35"></div>
+
+  <div class="wrap wrap--rel stack-56">
+    <div class="section__head section__head--light">
+      <h2 class="h2">Reserva tu <span class="menta">cita</span></h2>
+      <p class="section__lead">Escríbenos por WhatsApp o llama. Atendemos con cita previa.</p>
+    </div>
+
+    <div class="stack-16">
+      <div class="hours">
+        <div class="hours__title">
+          <svg class="ico" style="width:26px" stroke="#fff"><use href="#i-clock"/></svg>
+          <b>Horario</b>
+        </div>
+        <ol class="hours__days" id="hours-days">
+          <li><span>Lun</span><span class="t">09:00<i>–</i>20:00</span></li>
+          <li><span>Mar</span><span class="t">09:00<i>–</i>20:00</span></li>
+          <li><span>Mié</span><span class="t">09:00<i>–</i>20:00</span></li>
+          <li><span>Jue</span><span class="t">09:00<i>–</i>20:00</span></li>
+          <li><span>Vie</span><span class="t">09:00<i>–</i>20:00</span></li>
+          <li class="is-closed"><span>Sáb</span><span class="t">Cerrado</span></li>
+          <li class="is-closed"><span>Dom</span><span class="t">Cerrado</span></li>
+        </ol>
+      </div>
+
+      <div class="cards">
+        <a class="card card--link card--white" href="https://wa.me/34640046600" target="_blank" rel="noopener">
+          <div class="card__top">
+            <span class="badge badge--cristal"><svg class="ico" style="width:30px"><use href="#i-chat"/></svg></span>
+            <span class="arrow"><svg class="ico" style="width:20px" stroke-width="2.4"><use href="#i-arrow-up-right"/></svg></span>
+          </div>
+          <div class="card__foot">
+            <div class="eyebrow">WhatsApp</div>
+            <b class="card__big">Pedir cita</b>
+            <div class="card__note">Respuesta en horario de apertura</div>
+          </div>
+        </a>
+
+        <a class="card card--link card--abismo" href="tel:+34640046600">
+          <div class="card__top">
+            <span class="badge badge--menta"><svg class="ico" style="width:28px" stroke="#0A1F1E"><use href="#i-phone"/></svg></span>
+            <span class="arrow"><svg class="ico" style="width:20px" stroke-width="2.4"><use href="#i-arrow-up-right"/></svg></span>
+          </div>
+          <div class="card__foot">
+            <div class="eyebrow">Teléfono</div>
+            <b class="card__big">640 046 600</b>
+            <div class="card__note">Llamar ahora</div>
+          </div>
+        </a>
+
+        <a class="card card--link card--glass" href="#mapa">
+          <div class="card__top">
+            <span class="badge badge--white"><svg class="ico" style="width:28px" stroke="#0A1F1E"><use href="#i-pin"/></svg></span>
+            <span class="arrow"><svg class="ico" style="width:20px" stroke-width="2.4"><use href="#i-arrow-up-right"/></svg></span>
+          </div>
+          <div class="card__foot">
+            <div class="eyebrow">Dirección</div>
+            <b class="card__big">Autonomia Kalea, 22</b>
+            <div class="card__note">Bajo · 48830 Sodupe</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CENTRO / CONTACTO ============ -->
+<section id="centro" class="section section--espuma">
+  <div class="blob blob--menta" style="width:520px;height:520px;left:-160px;top:-160px;opacity:.5"></div>
+
+  <div class="wrap wrap--rel stack-28">
+    <h2 class="h2 h2--narrow">Un centro de barrio, <span class="lago">a pie de calle</span></h2>
+    <p class="section__lead section__lead--dark">KFG Masajes está en Sodupe, en el valle de Encartaciones. Trabajamos con cita previa para dedicarte el tiempo de la sesión.</p>
+
+    <div class="rule"><h3>Contacto</h3><span></span></div>
+
+    <div class="cards cards--contact">
+      <a class="card card--link card--lago" href="#mapa">
+        <div class="card__top">
+          <span class="badge badge--glass"><svg class="ico" style="width:28px" stroke="#fff"><use href="#i-pin"/></svg></span>
+          <span class="arrow arrow--ring"><svg class="ico" style="width:18px" stroke-width="2.4"><use href="#i-arrow-up-right"/></svg></span>
+        </div>
+        <div class="card__foot">
+          <div class="eyebrow">Dirección</div>
+          <b class="card__mid">Autonomia Kalea, 22</b>
+          <div class="card__note">Bajo · 48830 Sodupe</div>
+        </div>
+      </a>
+
+      <a class="card card--link card--abismo" href="tel:+34640046600">
+        <div class="card__top">
+          <span class="badge badge--menta"><svg class="ico" style="width:28px" stroke="#0A1F1E"><use href="#i-phone"/></svg></span>
+          <span class="arrow arrow--ring"><svg class="ico" style="width:18px" stroke-width="2.4"><use href="#i-arrow-up-right"/></svg></span>
+        </div>
+        <div class="card__foot">
+          <div class="eyebrow">Teléfono</div>
+          <b class="card__mid">640 046 600</b>
+          <div class="card__note">Llamada o WhatsApp</div>
+        </div>
+      </a>
+
+      <div class="card card--white card--static">
+        <div class="card__top">
+          <span class="badge badge--cristal"><svg class="ico" style="width:28px" stroke="#1F7A73"><use href="#i-clock"/></svg></span>
+        </div>
+        <div class="card__foot">
+          <div class="eyebrow">Horario</div>
+          <b class="card__mid">Lunes a Viernes</b>
+          <div class="card__note">09:00 – 20:00</div>
+        </div>
+      </div>
+
+      <a class="card card--link card--cielo" href="https://www.instagram.com/kfgmasajes/" target="_blank" rel="noopener">
+        <div class="card__top">
+          <span class="badge badge--white"><svg class="ico" style="width:28px" stroke="#1F7A73"><use href="#i-instagram"/></svg></span>
+          <span class="arrow arrow--ring"><svg class="ico" style="width:18px" stroke-width="2.4"><use href="#i-arrow-up-right"/></svg></span>
+        </div>
+        <div class="card__foot">
+          <div class="eyebrow">Instagram</div>
+          <b class="card__mid">@kfgmasajes</b>
+          <div class="card__note">Síguenos</div>
+        </div>
+      </a>
+
+      <!-- TODO: sustituir # por la URL real de la página de Facebook -->
+      <a class="card card--link card--cristal" href="#" target="_blank" rel="noopener">
+        <div class="card__top">
+          <span class="badge badge--white"><svg class="ico" style="width:28px" stroke="#1F7A73"><use href="#i-facebook"/></svg></span>
+          <span class="arrow arrow--ring"><svg class="ico" style="width:18px" stroke-width="2.4"><use href="#i-arrow-up-right"/></svg></span>
+        </div>
+        <div class="card__foot">
+          <div class="eyebrow">Facebook</div>
+          <b class="card__mid">KFG Masajes</b>
+          <div class="card__note">Síguenos</div>
+        </div>
+      </a>
+    </div>
+
+    <div id="mapa" class="map">
+      <div id="map" class="map__canvas" role="img" aria-label="Mapa con la ubicación de KFG Masajes en Autonomia Kalea 22, Sodupe"></div>
+      <div class="map__bar">
+        <div class="map__place">
+          <svg class="ico" style="width:28px;flex:none" stroke="#1F7A73"><use href="#i-pin"/></svg>
+          <div><b>KFG Masajes</b><div>Autonomia Kalea, 22, Bajo, 48830 Sodupe</div></div>
+        </div>
+        <a class="btn btn--sm btn--abismo" href="https://www.google.com/maps/search/?api=1&amp;query=Autonomia%20Kalea%2022%20Sodupe%2048830" target="_blank" rel="noopener">Cómo llegar
+          <span class="btn__dot"><svg class="ico" style="width:18px" stroke="#0A1F1E" stroke-width="2.4"><use href="#i-arrow-up-right"/></svg></span>
+        </a>
+      </div>
+    </div>
+    <p class="credit">Mapa © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> · <a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a></p>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <a class="logo" href="#top" aria-label="KFG Masajes, volver arriba" style="--logo:180px">
+      <svg class="logo__mark" aria-hidden="true"><use href="#kfg-mark"/></svg>
+      <span class="logo__text">Masajes</span>
+    </a>
+    <p>Quiromasaje · Osteopatía · Sodupe, Bizkaia<br>640 046 600 · <a href="https://www.instagram.com/kfgmasajes/" target="_blank" rel="noopener">@kfgmasajes</a></p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
