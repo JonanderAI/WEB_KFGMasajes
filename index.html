@@ -70,8 +70,6 @@
 
 <!-- ============ PORTADA ============ -->
 <header class="hero">
-  <img class="hero__photo" src="img/hero.webp" alt="" width="365" height="510" fetchpriority="high">
-  <div class="hero__veil"></div>
   <div class="blob blob--menta" style="width:680px;height:680px;left:-200px;top:-240px;opacity:.5"></div>
   <div class="blob blob--bruma" style="width:620px;height:620px;right:-200px;bottom:-200px;opacity:.55"></div>
 
@@ -88,19 +86,30 @@
       </nav>
     </div>
 
-    <div class="hero__body" id="top">
-      <h1 class="hero__title">Manos<br><span class="light">que</span> <span class="accent">cuidan</span></h1>
-      <div class="hero__row">
-        <p class="hero__lead">Quiromasaje y osteopatía en Sodupe, con cita previa de lunes a viernes.</p>
-        <div class="hero__ctas">
-          <a class="btn btn--lago" href="https://wa.me/34640046600?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20cita." target="_blank" rel="noopener">Pedir cita
-            <span class="btn__dot"><svg class="ico" style="width:24px" stroke-width="2.2"><use href="#i-chat"/></svg></span>
-          </a>
-          <a class="btn btn--abismo" href="tel:+34640046600">Llamar
-            <span class="btn__dot"><svg class="ico" style="width:24px"><use href="#i-phone"/></svg></span>
-          </a>
+    <div class="hero__grid" id="top">
+      <div class="hero__text">
+        <h1 class="hero__title">Manos<br><span class="light">que</span> <span class="accent">cuidan</span></h1>
+        <div class="hero__row">
+          <p class="hero__lead">Quiromasaje y osteopatía en Sodupe, con cita previa de lunes a viernes.</p>
+          <div class="hero__ctas">
+            <a class="btn btn--lago" href="https://wa.me/34640046600?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20cita." target="_blank" rel="noopener">Pedir cita
+              <span class="btn__dot"><svg class="ico" style="width:24px" stroke-width="2.2"><use href="#i-chat"/></svg></span>
+            </a>
+            <a class="btn btn--abismo" href="tel:+34640046600">Llamar
+              <span class="btn__dot"><svg class="ico" style="width:24px"><use href="#i-phone"/></svg></span>
+            </a>
+          </div>
+          <ul class="facts">
+            <li><svg class="ico" style="width:20px"><use href="#i-pin"/></svg>Sodupe, Bizkaia</li>
+            <li><svg class="ico" style="width:20px"><use href="#i-clock"/></svg>Lun–Vie · 09:00–20:00</li>
+          </ul>
         </div>
       </div>
+
+      <figure class="hero__card">
+        <img src="img/hero.webp" alt="Reflejo del cartel de KFG en la ventana del centro, entre plantas" width="365" height="510" fetchpriority="high">
+        <figcaption><p class="status status--light" data-status hidden><i></i><span></span></p></figcaption>
+      </figure>
     </div>
   </div>
 </header>
@@ -199,7 +208,7 @@
     <div class="section__head section__head--light">
       <h2 class="h2">Reserva tu <span class="menta">cita</span></h2>
       <p class="section__lead">Escríbenos por WhatsApp o llama. Atendemos con cita previa.</p>
-      <p class="status" id="status" hidden><i></i><span></span></p>
+      <p class="status" data-status hidden><i></i><span></span></p>
     </div>
 
     <div class="stack-16">
