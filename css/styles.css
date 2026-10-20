@@ -153,7 +153,7 @@ ul,ol{padding:0;list-style:none}
 
 /* mapa */
 .map{position:relative;border-radius:var(--r-card);overflow:hidden;background:var(--cristal);height:460px;margin-top:-12px}
-.map__canvas{position:absolute;inset:0}
+.map .map__canvas{position:absolute;inset:0;width:100%;height:100%}
 .map__bar{position:absolute;left:20px;right:20px;bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;pointer-events:none;z-index:2}
 .map__place,.map__bar .btn{pointer-events:auto}
 .map__place{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:28px;padding:18px 24px;display:flex;align-items:center;gap:14px;line-height:1.3}
