@@ -14,6 +14,6 @@ Sube el contenido de esta carpeta tal cual a la raíz del hosting (`index.html` 
 - `img/`: fotos en WebP
 
 ## Pendiente
-- URL real de Facebook (`index.html`, tarjeta Facebook, marcada con `TODO`)
+
 - Fotos definitivas y verificar las coordenadas del mapa
 - Mapa: carga teselas de OpenFreeMap y consulta Nominatim (requiere conexión)
