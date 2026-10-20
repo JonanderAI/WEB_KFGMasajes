@@ -174,7 +174,7 @@ ul,ol{padding:0;list-style:none}
 
 /* pie */
 .footer{background:var(--espuma)}
-.footer__card{position:relative;overflow:hidden;background:var(--abismo);color:var(--espuma);border-radius:var(--r-card) var(--r-card) 0 0;padding:clamp(40px,5vw,72px) max(5vw,calc((100% - 1300px)/2));display:flex;flex-direction:column;gap:clamp(40px,5vw,64px)}
+.footer__card{position:relative;overflow:hidden;background:var(--abismo);color:var(--espuma);border-radius:0;padding:clamp(40px,5vw,72px) max(5vw,calc((100% - 1300px)/2));display:flex;flex-direction:column;gap:clamp(40px,5vw,64px)}
 .footer__top{position:relative;display:flex;justify-content:space-between;align-items:flex-end;gap:32px 48px;flex-wrap:wrap}
 .footer__cta{display:flex;align-items:center;gap:20px 32px;flex-wrap:wrap}
 .footer__cta p{font-weight:500;font-size:clamp(24px,2.6vw,34px);line-height:1.1;letter-spacing:-.025em}
