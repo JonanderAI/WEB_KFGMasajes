@@ -45,7 +45,7 @@ ul,ol{padding:0;list-style:none}
   linear-gradient(90deg,var(--portada) 0%,rgba(244,250,248,.75) 45%,rgba(244,250,248,.1) 100%),
   linear-gradient(180deg,rgba(244,250,248,0) 70%,var(--portada) 100%)}
 .hero__inner{position:relative;display:flex;flex-direction:column}
-.topbar{max-width:1400px;width:100%;margin:0 auto clamp(48px,8vw,110px);display:flex;justify-content:space-between;align-items:center;gap:16px 24px;background:#fff;border-radius:var(--r-card);padding:16px 16px 16px clamp(20px,3vw,32px);box-shadow:0 10px 30px rgba(10,31,30,.06)}
+.topbar{max-width:1400px;width:100%;margin:0 auto clamp(48px,8vw,110px);display:flex;justify-content:space-between;align-items:center;gap:16px 24px}
 .nav{display:flex;align-items:center;gap:clamp(20px,3vw,32px);font-size:clamp(16px,1.6vw,18px);white-space:nowrap}
 .nav a{text-decoration:none;transition:color .25s}
 .nav a:hover{color:var(--lago)}
@@ -241,5 +241,4 @@ ul,ol{padding:0;list-style:none}
 
 @media (max-width:640px){
   .nav a:not(.nav__cta){display:none}
-  .topbar{padding:12px 12px 12px 20px}
 }
