@@ -198,13 +198,6 @@ ul,ol{padding:0;list-style:none}
   .grid .card:hover,.card--link:hover,.btn:hover{transform:none}
 }
 
-/* estado abierto/cerrado */
-.status{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;background:rgba(255,255,255,.14);border-radius:var(--r-btn);padding:8px 18px 8px 14px;font-size:15px;font-weight:500}
-.status[hidden]{display:none}
-.status i{width:10px;height:10px;border-radius:50%;background:#B0BDB9;flex:none}
-.status.is-open i{background:#5FD39B;box-shadow:0 0 0 0 rgba(95,211,155,.6);animation:kfgdot 2s ease-out infinite}
-@keyframes kfgdot{0%{box-shadow:0 0 0 0 rgba(95,211,155,.55)}100%{box-shadow:0 0 0 10px rgba(95,211,155,0)}}
-
 /* aparición al hacer scroll (solo con JS) */
 .js .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .js .reveal.in{opacity:1;transform:none}

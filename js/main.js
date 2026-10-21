@@ -6,18 +6,6 @@
   var today = (new Date().getDay() + 6) % 7; // 0 = lunes
   if (days[today]) days[today].classList.add('is-today');
 
-  /* ---- Estado abierto / cerrado ---- */
-  var now = new Date();
-  var wd = now.getDay(), mins = now.getHours() * 60 + now.getMinutes();
-  var isOpen = wd >= 1 && wd <= 5 && mins >= 540 && mins < 1200;
-  document.querySelectorAll('[data-status]').forEach(function (el) {
-    el.classList.toggle('is-open', isOpen);
-    el.querySelector('span').textContent = isOpen
-      ? 'Abierto ahora · hasta las 20:00'
-      : 'Cerrado ahora · L–V 09:00 a 20:00';
-    el.hidden = false;
-  });
-
   /* ---- Barra fija de contacto en móvil: aparece al pasar la portada ---- */
   var dock = document.getElementById('dock');
   var hero = document.querySelector('.hero');
