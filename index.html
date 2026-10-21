@@ -33,25 +33,66 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "HealthAndBeautyBusiness",
-  "name": "KFG Masajes",
-  "description": "Quiromasaje y osteopatía en Sodupe, con cita previa.",
-  "telephone": "+34640046600",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Autonomia Kalea, 22, Bajo",
-    "postalCode": "48830",
-    "addressLocality": "Sodupe",
-    "addressRegion": "Bizkaia",
-    "addressCountry": "ES"
-  },
-  "openingHoursSpecification": [{
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    "opens": "09:00",
-    "closes": "20:00"
-  }],
-  "sameAs": ["https://www.instagram.com/kfgmasajes/", "https://www.facebook.com/KFGMasajes/"]
+  "@graph": [
+    {
+      "@type": "HealthAndBeautyBusiness",
+      "@id": "https://jonanderai.github.io/WEB_KFGMasajes/#business",
+      "name": "KFG Masajes",
+      "slogan": "Manos que cuidan",
+      "description": "Centro de masajes en Sodupe: masaje deportivo, relajante, descontracturante, holístico, quiromasaje y osteopatía con cita previa.",
+      "url": "https://jonanderai.github.io/WEB_KFGMasajes/",
+      "image": "https://jonanderai.github.io/WEB_KFGMasajes/img/og.jpg",
+      "telephone": "+34640046600",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Autonomia Kalea, 22, Bajo",
+        "addressLocality": "Sodupe",
+        "postalCode": "48830",
+        "addressRegion": "Bizkaia",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.2011,
+        "longitude": -3.0492
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "20:00"
+      }],
+      "areaServed": [
+        { "@type": "City", "name": "Sodupe" },
+        { "@type": "City", "name": "Güeñes" },
+        { "@type": "City", "name": "Zalla" },
+        { "@type": "City", "name": "Alonsotegi" },
+        { "@type": "City", "name": "Gordexola" },
+        { "@type": "City", "name": "Balmaseda" },
+        { "@type": "AdministrativeArea", "name": "Enkarterri" }
+      ],
+      "sameAs": ["https://www.instagram.com/kfgmasajes/", "https://www.facebook.com/KFGMasajes/"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Masajes",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Masaje deportivo" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Masaje relajante" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Masaje descontracturante" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Masaje holístico" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Quiromasaje" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Osteopatía" } }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://jonanderai.github.io/WEB_KFGMasajes/#website",
+      "url": "https://jonanderai.github.io/WEB_KFGMasajes/",
+      "name": "KFG Masajes",
+      "inLanguage": "es"
+    }
+  ]
 }
 </script>
 </head>
