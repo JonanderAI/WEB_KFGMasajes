@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KFG Masajes · Quiromasaje y osteopatía en Sodupe</title>
-<meta name="description" content="Quiromasaje y osteopatía en Sodupe (Encartaciones, Bizkaia). Masaje deportivo, relajante, terapéutico y holístico con cita previa de lunes a viernes. Tel. 640 046 600.">
+<meta name="description" content="Quiromasaje y osteopatía en Sodupe (Encartaciones, Bizkaia). Masaje deportivo, relajante, descontracturante y holístico con cita previa de lunes a viernes. Tel. 640 046 600.">
 <meta name="theme-color" content="#1F7A73">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preload" href="fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -77,6 +77,7 @@
   <symbol id="s-holistic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></symbol>
   <symbol id="s-quiro" viewBox="0 0 24 24"><path d="M12 3V21M8 6H16M8 12H16M8 18H16"/></symbol>
   <symbol id="s-osteo" viewBox="0 0 24 24"><path d="M12 3L21 8V12C21 17 17 20 12 21C7 20 3 17 3 12V8Z"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6L18 18M18 6L6 18"/></symbol>
 </svg>
 
 <a class="skip" href="#servicios">Saltar al contenido</a>
@@ -132,6 +133,7 @@
       <div class="card card--static card--svc card--lago">
         <div class="card__top">
           <span class="badge badge--glass"><svg class="ico" style="width:30px"><use href="#s-sport"/></svg></span>
+          <span class="arrow"><svg class="ico" style="width:20px" stroke-width="2.4"><use href="#i-arrow-up-right"/></svg></span>
         </div>
         <div class="card__body">
           <h3 class="card__title">Masaje deportivo</h3>
@@ -143,6 +145,7 @@
       <div class="card card--static card--svc card--espuma">
         <div class="card__top">
           <span class="badge badge--white"><svg class="ico" style="width:30px"><use href="#s-relax"/></svg></span>
+          <span class="arrow"><svg class="ico" style="width:20px" stroke-width="2.4"><use href="#i-arrow-up-right"/></svg></span>
         </div>
         <div class="card__body">
           <h3 class="card__title">Masaje relajante</h3>
@@ -151,20 +154,22 @@
         <ul class="tags"><li>Estrés diario</li><li>Cuello y hombros</li><li>Espalda</li><li>Descanso</li></ul>
       </div>
 
-      <div class="card card--static card--svc card--cielo">
+      <button type="button" class="card card--static card--svc card--cielo card--clickable" data-service="descontracturante" aria-haspopup="dialog">
         <div class="card__top">
           <span class="badge badge--white"><svg class="ico" style="width:30px"><use href="#s-therapy"/></svg></span>
+          <span class="arrow"><svg class="ico" style="width:20px" stroke-width="2.4"><use href="#i-arrow-up-right"/></svg></span>
         </div>
         <div class="card__body">
-          <h3 class="card__title">Masaje terapéutico</h3>
+          <h3 class="card__title">Masaje descontracturante</h3>
           <p>Trabajo dirigido a las zonas con contracturas o molestias musculares.</p>
         </div>
         <ul class="tags"><li>Contracturas</li><li>Dolor muscular</li><li>Tensión acumulada</li></ul>
-      </div>
+      </button>
 
       <div class="card card--static card--svc card--cristal">
         <div class="card__top">
           <span class="badge badge--white"><svg class="ico" style="width:30px"><use href="#s-holistic"/></svg></span>
+          <span class="arrow"><svg class="ico" style="width:20px" stroke-width="2.4"><use href="#i-arrow-up-right"/></svg></span>
         </div>
         <div class="card__body">
           <h3 class="card__title">Masaje holístico</h3>
@@ -176,6 +181,7 @@
       <div class="card card--static card--svc card--espuma">
         <div class="card__top">
           <span class="badge badge--white"><svg class="ico" style="width:30px"><use href="#s-quiro"/></svg></span>
+          <span class="arrow"><svg class="ico" style="width:20px" stroke-width="2.4"><use href="#i-arrow-up-right"/></svg></span>
         </div>
         <div class="card__body">
           <h3 class="card__title">Quiromasaje</h3>
@@ -187,6 +193,7 @@
       <div class="card card--static card--svc card--abismo">
         <div class="card__top">
           <span class="badge badge--menta"><svg class="ico" style="width:30px"><use href="#s-osteo"/></svg></span>
+          <span class="arrow"><svg class="ico" style="width:20px" stroke-width="2.4"><use href="#i-arrow-up-right"/></svg></span>
         </div>
         <div class="card__body">
           <h3 class="card__title">Osteopatía</h3>
@@ -367,6 +374,27 @@
 <div class="dock" id="dock" aria-label="Contacto rápido">
   <a class="dock__call" href="tel:+34640046600"><svg class="ico" style="width:22px"><use href="#i-phone"/></svg>Llamar</a>
   <a class="dock__wa" href="https://wa.me/34640046600?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20cita." target="_blank" rel="noopener"><svg class="ico" style="width:22px"><use href="#i-chat"/></svg>WhatsApp</a>
+</div>
+
+<!-- ============ MODAL SERVICIO ============ -->
+<div class="modal" id="service-modal" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">
+      <svg class="ico" style="width:22px"><use href="#i-close"/></svg>
+    </button>
+    <span class="badge modal__badge" id="modal-badge"></span>
+    <h3 class="modal__title" id="modal-title"></h3>
+    <p class="modal__tagline" id="modal-tagline"></p>
+    <p class="modal__desc" id="modal-desc"></p>
+    <h4 class="modal__subhead">Ideal para</h4>
+    <ul class="tags" id="modal-idealpara"></ul>
+    <h4 class="modal__subhead">Beneficios</h4>
+    <ul class="modal__benefits" id="modal-benefits"></ul>
+    <a class="btn btn--lago modal__cta" id="modal-cta" target="_blank" rel="noopener">Pedir cita
+      <span class="btn__dot"><svg class="ico" style="width:24px"><use href="#i-chat"/></svg></span>
+    </a>
+  </div>
 </div>
 
 <script src="js/main.js" defer></script>

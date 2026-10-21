@@ -40,6 +40,75 @@
     });
   }
 
+  /* ---- Modal de servicio ---- */
+  var SERVICES = {
+    descontracturante: {
+      badgeIcon: 's-therapy',
+      badgeClass: 'badge--white',
+      title: 'Masaje descontracturante',
+      tagline: 'Libera tensión · Recupera movilidad · Siéntete mejor',
+      desc: 'Un masaje intenso y localizado que trabaja la musculatura para reducir contracturas, rigidez y sobrecargas musculares.',
+      idealPara: ['Espalda', 'Cuello', 'Hombros', 'Piernas', 'Sobrecargas deportivas'],
+      benefits: [
+        'Alivia la tensión muscular.',
+        'Ayuda a reducir molestias y sensación de sobrecarga.',
+        'Mejora la movilidad y flexibilidad.',
+        'Favorece la circulación de la zona.',
+        'Aporta relajación y bienestar.'
+      ],
+      whatsappText: 'Hola, me gustaría pedir cita para: Masaje descontracturante.'
+    }
+  };
+
+  var modal = document.getElementById('service-modal');
+  if (modal) {
+    var modalBadge = document.getElementById('modal-badge');
+    var modalTitle = document.getElementById('modal-title');
+    var modalTagline = document.getElementById('modal-tagline');
+    var modalDesc = document.getElementById('modal-desc');
+    var modalIdealPara = document.getElementById('modal-idealpara');
+    var modalBenefits = document.getElementById('modal-benefits');
+    var modalCta = document.getElementById('modal-cta');
+    var lastFocused = null;
+
+    function openModal(data) {
+      modalBadge.className = 'badge modal__badge ' + data.badgeClass;
+      modalBadge.innerHTML = '<svg class="ico" style="width:30px"><use href="#' + data.badgeIcon + '"/></svg>';
+      modalTitle.textContent = data.title;
+      modalTagline.textContent = data.tagline;
+      modalDesc.textContent = data.desc;
+      modalIdealPara.innerHTML = data.idealPara.map(function (t) { return '<li>' + t + '</li>'; }).join('');
+      modalBenefits.innerHTML = data.benefits.map(function (t) { return '<li>' + t + '</li>'; }).join('');
+      modalCta.href = 'https://wa.me/34640046600?text=' + encodeURIComponent(data.whatsappText);
+
+      lastFocused = document.activeElement;
+      modal.hidden = false;
+      document.body.classList.add('modal-open');
+      modal.querySelector('.modal__close').focus();
+    }
+
+    function closeModal() {
+      modal.hidden = true;
+      document.body.classList.remove('modal-open');
+      if (lastFocused) lastFocused.focus();
+    }
+
+    document.querySelectorAll('[data-service]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var data = SERVICES[btn.getAttribute('data-service')];
+        if (data) openModal(data);
+      });
+    });
+
+    modal.querySelectorAll('[data-modal-close]').forEach(function (el) {
+      el.addEventListener('click', closeModal);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !modal.hidden) closeModal();
+    });
+  }
+
   /* ---- Mapa (OpenFreeMap + MapLibre), se carga al acercarse a la sección ---- */
   var mapEl = document.getElementById('map');
   if (!mapEl) return;
