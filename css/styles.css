@@ -51,7 +51,7 @@ ul,ol{padding:0;list-style:none}
 .light{font-weight:300}
 .accent{color:var(--lago)}
 .hero__row{display:flex;flex-direction:column;align-items:flex-start;gap:28px 40px}
-.hero__lead{display:block;font-size:clamp(18px,1.8vw,24px);line-height:1.55;font-weight:300;letter-spacing:normal;max-width:760px;text-wrap:balance;margin-top:clamp(32px,4vw,56px)}
+.hero__lead{display:block;font-size:clamp(18px,1.8vw,24px);line-height:1.55;font-weight:300;letter-spacing:normal;max-width:760px;text-wrap:balance;margin-top:clamp(14px,1.8vw,22px)}
 .hero__ctas{display:flex;gap:12px;flex-wrap:wrap}
 
 /* botones */
