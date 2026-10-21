@@ -40,9 +40,10 @@
     });
   }
 
-  /* ---- Modal de servicio ---- */
+  /* ---- Modal de servicio (mismo estilo que su tarjeta, animación de expansión) ---- */
   var SERVICES = {
     descontracturante: {
+      theme: 'cielo',
       badgeIcon: 's-therapy',
       badgeClass: 'badge--white',
       title: 'Masaje descontracturante',
@@ -62,6 +63,7 @@
 
   var modal = document.getElementById('service-modal');
   if (modal) {
+    var modalPanel = modal.querySelector('.modal__panel');
     var modalBadge = document.getElementById('modal-badge');
     var modalTitle = document.getElementById('modal-title');
     var modalTagline = document.getElementById('modal-tagline');
@@ -70,8 +72,10 @@
     var modalBenefits = document.getElementById('modal-benefits');
     var modalCta = document.getElementById('modal-cta');
     var lastFocused = null;
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    function openModal(data) {
+    function openModal(data, originEl) {
+      modalPanel.className = 'modal__panel card--' + data.theme;
       modalBadge.className = 'badge modal__badge ' + data.badgeClass;
       modalBadge.innerHTML = '<svg class="ico" style="width:30px"><use href="#' + data.badgeIcon + '"/></svg>';
       modalTitle.textContent = data.title;
@@ -82,21 +86,50 @@
       modalCta.href = 'https://wa.me/34640046600?text=' + encodeURIComponent(data.whatsappText);
 
       lastFocused = document.activeElement;
+      var fromRect = originEl ? originEl.getBoundingClientRect() : null;
+
       modal.hidden = false;
       document.body.classList.add('modal-open');
+
+      if (fromRect && !reduceMotion) {
+        var toRect = modalPanel.getBoundingClientRect();
+        var dx = fromRect.left - toRect.left;
+        var dy = fromRect.top - toRect.top;
+        var scaleX = fromRect.width / toRect.width;
+        var scaleY = fromRect.height / toRect.height;
+        modalPanel.style.transition = 'none';
+        modalPanel.style.transformOrigin = 'top left';
+        modalPanel.style.transform = 'translate(' + dx + 'px,' + dy + 'px) scale(' + scaleX + ',' + scaleY + ')';
+        modalPanel.style.opacity = '.4';
+        // eslint-disable-next-line no-unused-expressions
+        modalPanel.offsetHeight; // forzar reflow
+        modalPanel.style.transition = 'transform .5s var(--ease), opacity .3s var(--ease)';
+        modalPanel.style.transform = 'none';
+        modalPanel.style.opacity = '1';
+      }
+
       modal.querySelector('.modal__close').focus();
     }
 
     function closeModal() {
-      modal.hidden = true;
-      document.body.classList.remove('modal-open');
+      if (reduceMotion) {
+        modal.hidden = true;
+        document.body.classList.remove('modal-open');
+      } else {
+        modal.classList.add('is-closing');
+        setTimeout(function () {
+          modal.hidden = true;
+          modal.classList.remove('is-closing');
+          document.body.classList.remove('modal-open');
+        }, 200);
+      }
       if (lastFocused) lastFocused.focus();
     }
 
     document.querySelectorAll('[data-service]').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var data = SERVICES[btn.getAttribute('data-service')];
-        if (data) openModal(data);
+        if (data) openModal(data, btn);
       });
     });
 
@@ -169,8 +202,17 @@
       ]
     };
 
-    var map = new M.Map({ container: mapEl, style: style, center: LNGLAT, zoom: 16.3, scrollZoom: false, attributionControl: false });
-    map.addControl(new M.NavigationControl({ showCompass: false }), 'top-right');
+    var map = new M.Map({
+      container: mapEl, style: style, center: LNGLAT, zoom: 16.3, attributionControl: false,
+      scrollZoom: false, dragPan: false, dragRotate: false, touchZoomRotate: false,
+      touchPitch: false, doubleClickZoom: false, keyboard: false
+    });
+    map.addControl(new M.NavigationControl({ showCompass: false, showZoom: true }), 'top-right');
+    mapEl.addEventListener('click', function () {
+      map.scrollZoom.enable();
+      map.dragPan.enable();
+      map.touchZoomRotate.enable();
+    }, { once: true });
 
     var pin = document.createElement('div');
     pin.className = 'pin';
