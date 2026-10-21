@@ -320,9 +320,11 @@ ul,ol{padding:0;list-style:none}
 .modal__body{padding:clamp(26px,4vw,40px) clamp(26px,4vw,40px) 4px;display:flex;flex-direction:column;gap:14px}
 .modal__close{position:absolute;top:18px;right:18px;z-index:1;width:44px;height:44px;border-radius:50%;border:none;background:var(--menta);color:var(--abismo);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .35s var(--ease),background .25s,color .25s}
 .modal__close:hover{background:var(--abismo);color:#fff;transform:rotate(90deg) scale(1.1)}
-.modal__badge{width:56px;height:56px}
-.modal__title{font-weight:500;font-size:clamp(24px,3vw,30px);letter-spacing:-.025em;line-height:1.05;padding-right:40px}
-.modal__tagline{font-weight:500;color:var(--lago)}
+.modal__head{display:flex;align-items:center;gap:16px}
+.modal__badge{flex:none;width:52px;height:52px}
+.modal__headtext{min-width:0;padding-right:40px}
+.modal__title{font-weight:500;font-size:clamp(22px,2.6vw,26px);letter-spacing:-.025em;line-height:1.15}
+.modal__tagline{font-weight:500;color:var(--lago);font-size:15px}
 .modal__desc{font-weight:300;opacity:.92}
 .modal__subhead{display:flex;align-items:center;gap:12px;font-weight:600;font-size:17px;margin-top:4px}
 .modal__subhead::after{content:"";flex:1;height:1px;background:rgba(10,31,30,.15)}
