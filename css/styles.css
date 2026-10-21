@@ -48,11 +48,10 @@ ul,ol{padding:0;list-style:none}
 .nav a{text-decoration:none;transition:color .25s}
 .nav a:hover{color:var(--lago)}
 .hero__title{font-weight:500;font-size:clamp(60px,11vw,176px);line-height:.88;letter-spacing:-.055em}
-.hero__eyebrow{display:block;font-size:clamp(13px,1.4vw,16px);font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lago);margin-bottom:clamp(10px,1.5vw,16px)}
 .light{font-weight:300}
 .accent{color:var(--lago)}
 .hero__row{display:flex;flex-direction:column;align-items:flex-start;gap:28px 40px}
-.hero__lead{font-size:clamp(18px,1.8vw,24px);max-width:560px;font-weight:300;text-wrap:balance}
+.hero__lead{display:block;font-size:clamp(18px,1.8vw,24px);line-height:1.55;font-weight:300;letter-spacing:normal;max-width:560px;text-wrap:balance;margin-top:clamp(32px,4vw,56px)}
 .hero__ctas{display:flex;gap:12px;flex-wrap:wrap}
 
 /* botones */
