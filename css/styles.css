@@ -324,12 +324,16 @@ ul,ol{padding:0;list-style:none}
 .modal__title{font-weight:500;font-size:clamp(24px,3vw,30px);letter-spacing:-.025em;line-height:1.05;padding-right:40px}
 .modal__tagline{font-weight:500;color:var(--lago)}
 .modal__desc{font-weight:300;opacity:.92}
-.modal__subhead{font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:.05em;opacity:.65;margin-top:2px}
-.modal__benefits{display:flex;flex-direction:column;gap:8px}
-.modal__benefits li{position:relative;padding-left:24px;font-weight:300}
-.modal__benefits li::before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;border-radius:50%;background:var(--lago)}
+.modal__subhead{display:flex;align-items:center;gap:12px;font-weight:600;font-size:17px;margin-top:4px}
+.modal__subhead::after{content:"";flex:1;height:1px;background:rgba(10,31,30,.15)}
+.modal__benefits{display:flex;flex-direction:column;gap:12px}
+.modal__benefits li{display:flex;align-items:center;gap:12px;font-weight:300}
+.modal__check{flex:none;width:22px;height:22px;border-radius:50%;background:#fff;color:var(--lago);display:flex;align-items:center;justify-content:center}
 .modal__foot{padding:14px clamp(26px,4vw,40px) clamp(22px,4vw,30px)}
 .modal__cta{width:100%;justify-content:space-between}
+.modal__alt{text-align:center;font-size:14px;opacity:.75;margin-top:12px}
+.modal__alt a{font-weight:600;color:inherit;text-decoration:none}
+.modal__alt a:hover{text-decoration:underline}
 body.modal-open{overflow:hidden}
 @keyframes modalFade{from{opacity:0}to{opacity:1}}
 @media (prefers-reduced-motion:reduce){

@@ -87,7 +87,9 @@
       modalTagline.textContent = data.tagline;
       modalDesc.textContent = data.desc;
       modalIdealPara.innerHTML = data.idealPara.map(function (t) { return '<li>' + t + '</li>'; }).join('');
-      modalBenefits.innerHTML = data.benefits.map(function (t) { return '<li>' + t + '</li>'; }).join('');
+      modalBenefits.innerHTML = data.benefits.map(function (t) {
+        return '<li><span class="modal__check"><svg class="ico" style="width:12px" stroke-width="3"><use href="#i-check"/></svg></span>' + t + '</li>';
+      }).join('');
       modalCta.href = 'https://wa.me/34640046600?text=' + encodeURIComponent(data.whatsappText);
 
       lastFocused = document.activeElement;
