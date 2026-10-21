@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jonanderai.github.io/WEB_KFGMasajes/sitemap.xml
