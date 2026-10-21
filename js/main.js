@@ -51,7 +51,7 @@
     descontracturante: {
       theme: 'cielo',
       badgeIcon: 'kfg-descontracturante',
-      badgeClass: 'badge--kfg-descontracturante',
+      badgeClass: 'badge--white',
       title: 'Masaje descontracturante',
       tagline: 'Libera tensión · Recupera movilidad',
       desc: 'Trabajo intenso y localizado sobre la musculatura para aliviar contracturas, rigidez y sobrecargas.',
