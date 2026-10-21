@@ -121,6 +121,14 @@ ul,ol{padding:0;list-style:none}
 .badge--menta{background:var(--menta);color:var(--abismo)}
 .badge--white{background:#fff;color:var(--abismo)}
 .badge--glass{background:rgba(255,255,255,.18)}
+.badge--kfg-deportivo{background:var(--lago);color:#fff}
+.badge--kfg-relajante{background:var(--espuma);color:var(--lago)}
+.badge--kfg-descontracturante{background:var(--cielo);color:var(--lago)}
+.badge--kfg-holistico{background:var(--cristal);color:var(--lago)}
+.badge--kfg-quiromasaje{background:var(--espuma);color:var(--lago)}
+.badge--kfg-osteopatia{background:var(--abismo);color:var(--bruma)}
+.badge--kfg-cita{background:var(--menta);color:var(--abismo)}
+.badge--kfg-telefono{background:var(--bruma);color:var(--abismo)}
 .arrow{width:44px;height:44px;border-radius:50%;background:var(--menta);color:var(--abismo);display:flex;align-items:center;justify-content:center;transition:transform .35s var(--ease),background .25s,color .25s}
 .arrow--ring{width:40px;height:40px;background:none;border:1.5px solid currentColor;color:inherit;opacity:.8}
 .card__foot{line-height:1.2}
