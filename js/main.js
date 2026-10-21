@@ -32,9 +32,15 @@
         }, 1000);
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    targets.forEach(function (el, i) {
+    targets.forEach(function (el) {
       el.classList.add('reveal');
-      var col = el.classList.contains('card') ? i % 3 : 0;
+      var col = 0;
+      if (el.classList.contains('card') && el.parentElement) {
+        var siblingCards = Array.prototype.filter.call(el.parentElement.children, function (c) {
+          return c.classList.contains('card');
+        });
+        col = siblingCards.indexOf(el) % 3;
+      }
       el.style.transitionDelay = (col * 90) + 'ms';
       ro.observe(el);
     });
