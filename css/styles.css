@@ -47,7 +47,7 @@ ul,ol{padding:0;list-style:none}
 .nav{display:flex;align-items:center;gap:clamp(20px,3vw,32px);font-size:clamp(16px,1.6vw,18px);white-space:nowrap}
 .nav a{text-decoration:none;transition:color .25s}
 .nav a:hover{color:var(--lago)}
-.hero__title{font-weight:500;font-size:clamp(40px,7vw,112px);line-height:.95;letter-spacing:-.04em}
+.hero__title{font-weight:500;font-size:clamp(52px,7vw,112px);line-height:.95;letter-spacing:-.04em}
 .light{font-weight:300}
 .accent{color:var(--lago)}
 .hero__row{display:flex;flex-direction:column;align-items:flex-start;gap:28px 40px}
@@ -304,6 +304,7 @@ ul,ol{padding:0;list-style:none}
   .topbar{gap:12px}
   .topbar .logo{--logo:112px!important}
   .nav{gap:14px;font-size:15px}
+  .hero__title{font-size:44px}
 }
 
 /* ---------- Modal servicio ---------- */
@@ -317,12 +318,11 @@ ul,ol{padding:0;list-style:none}
 .modal__panel.card--cristal{background:var(--cristal);color:var(--abismo)}
 .modal__panel.card--abismo{background:var(--abismo);color:var(--espuma)}
 .modal.is-closing .modal__backdrop{opacity:0}
+.modal__panel:focus{outline:none}
 .modal__body{padding:clamp(26px,4vw,40px) clamp(26px,4vw,40px) 4px;display:flex;flex-direction:column;gap:14px}
-.modal__close{position:absolute;top:18px;right:18px;z-index:1;width:44px;height:44px;border-radius:50%;border:none;background:var(--menta);color:var(--abismo);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .35s var(--ease),background .25s,color .25s}
-.modal__close:hover{background:var(--abismo);color:#fff;transform:rotate(90deg) scale(1.1)}
 .modal__head{display:flex;align-items:center;gap:16px}
 .modal__badge{flex:none;width:52px;height:52px}
-.modal__headtext{min-width:0;padding-right:40px}
+.modal__headtext{min-width:0}
 .modal__title{font-weight:500;font-size:clamp(22px,2.6vw,26px);letter-spacing:-.025em;line-height:1.15}
 .modal__tagline{font-weight:500;color:var(--lago);font-size:15px}
 .modal__desc{font-weight:300;opacity:.92}

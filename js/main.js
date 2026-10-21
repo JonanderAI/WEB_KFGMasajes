@@ -94,12 +94,20 @@
 
       lastFocused = document.activeElement;
       lastOrigin = originEl || null;
-      var fromRect = originEl ? originEl.getBoundingClientRect() : null;
+      var isMobile = window.matchMedia && window.matchMedia('(max-width: 640px)').matches;
+      var fromRect = (!isMobile && originEl) ? originEl.getBoundingClientRect() : null;
 
       modal.hidden = false;
       document.body.classList.add('modal-open');
 
-      if (fromRect && !reduceMotion) {
+      if (isMobile && !reduceMotion) {
+        modalPanel.style.transition = 'none';
+        modalPanel.style.transform = 'translateY(100%)';
+        // eslint-disable-next-line no-unused-expressions
+        modalPanel.offsetHeight; // forzar reflow
+        modalPanel.style.transition = 'transform .35s var(--ease)';
+        modalPanel.style.transform = 'none';
+      } else if (fromRect && !reduceMotion) {
         var toRect = modalPanel.getBoundingClientRect();
         var dx = fromRect.left - toRect.left;
         var dy = fromRect.top - toRect.top;
@@ -116,7 +124,7 @@
         modalPanel.style.opacity = '1';
       }
 
-      modal.querySelector('.modal__close').focus();
+      modalPanel.focus();
     }
 
     function closeModal() {
@@ -134,9 +142,14 @@
       if (reduceMotion) { finish(); return; }
 
       modal.classList.add('is-closing');
-      var toRect = lastOrigin && lastOrigin.isConnected ? lastOrigin.getBoundingClientRect() : null;
+      var isMobile = window.matchMedia && window.matchMedia('(max-width: 640px)').matches;
+      var toRect = (!isMobile && lastOrigin && lastOrigin.isConnected) ? lastOrigin.getBoundingClientRect() : null;
 
-      if (toRect) {
+      if (isMobile) {
+        modalPanel.style.transition = 'transform .3s var(--ease)';
+        modalPanel.style.transform = 'translateY(100%)';
+        setTimeout(finish, 300);
+      } else if (toRect) {
         var panelRect = modalPanel.getBoundingClientRect();
         var dx = toRect.left - panelRect.left;
         var dy = toRect.top - panelRect.top;
