@@ -50,7 +50,7 @@ ul,ol{padding:0;list-style:none}
 .hero__title{font-weight:500;font-size:clamp(60px,11vw,176px);line-height:.88;letter-spacing:-.055em}
 .light{font-weight:300}
 .accent{color:var(--lago)}
-.hero__row{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:28px 40px}
+.hero__row{display:flex;flex-direction:column;align-items:flex-start;gap:28px 40px}
 .hero__lead{font-size:clamp(18px,1.8vw,24px);max-width:560px;font-weight:300;text-wrap:balance}
 .hero__ctas{display:flex;gap:12px;flex-wrap:wrap}
 
@@ -265,7 +265,7 @@ ul,ol{padding:0;list-style:none}
   .centro__social .card--link{min-height:150px}
 }
 
-.hero__grid{max-width:1400px;width:100%;margin:auto auto 0}
+.hero__grid{max-width:1400px;width:100%;margin:auto}
 .hero__text{display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)}
 
 /* ---------- hover de tarjetas ---------- */
