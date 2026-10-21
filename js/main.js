@@ -47,15 +47,13 @@
       badgeIcon: 's-therapy',
       badgeClass: 'badge--white',
       title: 'Masaje descontracturante',
-      tagline: 'Libera tensión · Recupera movilidad · Siéntete mejor',
-      desc: 'Un masaje intenso y localizado que trabaja la musculatura para reducir contracturas, rigidez y sobrecargas musculares.',
+      tagline: 'Libera tensión · Recupera movilidad',
+      desc: 'Trabajo intenso y localizado sobre la musculatura para aliviar contracturas, rigidez y sobrecargas.',
       idealPara: ['Espalda', 'Cuello', 'Hombros', 'Piernas', 'Sobrecargas deportivas'],
       benefits: [
-        'Alivia la tensión muscular.',
-        'Ayuda a reducir molestias y sensación de sobrecarga.',
-        'Mejora la movilidad y flexibilidad.',
-        'Favorece la circulación de la zona.',
-        'Aporta relajación y bienestar.'
+        'Menos tensión y contracturas',
+        'Más movilidad y flexibilidad',
+        'Mejora la circulación'
       ],
       whatsappText: 'Hola, me gustaría pedir cita para: Masaje descontracturante.'
     }
@@ -72,6 +70,7 @@
     var modalBenefits = document.getElementById('modal-benefits');
     var modalCta = document.getElementById('modal-cta');
     var lastFocused = null;
+    var lastOrigin = null;
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function openModal(data, originEl) {
@@ -86,6 +85,7 @@
       modalCta.href = 'https://wa.me/34640046600?text=' + encodeURIComponent(data.whatsappText);
 
       lastFocused = document.activeElement;
+      lastOrigin = originEl || null;
       var fromRect = originEl ? originEl.getBoundingClientRect() : null;
 
       modal.hidden = false;
@@ -112,18 +112,39 @@
     }
 
     function closeModal() {
-      if (reduceMotion) {
+      function finish() {
         modal.hidden = true;
+        modal.classList.remove('is-closing');
+        modalPanel.style.transition = '';
+        modalPanel.style.transformOrigin = '';
+        modalPanel.style.transform = '';
+        modalPanel.style.opacity = '';
         document.body.classList.remove('modal-open');
-      } else {
-        modal.classList.add('is-closing');
-        setTimeout(function () {
-          modal.hidden = true;
-          modal.classList.remove('is-closing');
-          document.body.classList.remove('modal-open');
-        }, 200);
+        if (lastFocused) lastFocused.focus();
       }
-      if (lastFocused) lastFocused.focus();
+
+      if (reduceMotion) { finish(); return; }
+
+      modal.classList.add('is-closing');
+      var toRect = lastOrigin && lastOrigin.isConnected ? lastOrigin.getBoundingClientRect() : null;
+
+      if (toRect) {
+        var panelRect = modalPanel.getBoundingClientRect();
+        var dx = toRect.left - panelRect.left;
+        var dy = toRect.top - panelRect.top;
+        var scaleX = toRect.width / panelRect.width;
+        var scaleY = toRect.height / panelRect.height;
+        modalPanel.style.transformOrigin = 'top left';
+        modalPanel.style.transition = 'transform .35s var(--ease), opacity .3s var(--ease)';
+        modalPanel.style.transform = 'translate(' + dx + 'px,' + dy + 'px) scale(' + scaleX + ',' + scaleY + ')';
+        modalPanel.style.opacity = '0';
+        setTimeout(finish, 350);
+      } else {
+        modalPanel.style.transition = 'transform .2s var(--ease), opacity .2s var(--ease)';
+        modalPanel.style.transform = 'scale(.95)';
+        modalPanel.style.opacity = '0';
+        setTimeout(finish, 200);
+      }
     }
 
     document.querySelectorAll('[data-service]').forEach(function (btn) {
