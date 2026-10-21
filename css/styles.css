@@ -315,7 +315,7 @@ ul,ol{padding:0;list-style:none}
 .modal__benefits li{position:relative;padding-left:26px;font-weight:300}
 .modal__benefits li::before{content:"";position:absolute;left:0;top:9px;width:10px;height:10px;border-radius:50%;background:var(--lago)}
 .modal__foot{padding:16px clamp(28px,4vw,44px) clamp(24px,4vw,34px);box-shadow:0 -12px 20px -12px rgba(10,31,30,.12)}
-.modal__cta{width:100%;justify-content:center}
+.modal__cta{width:100%;justify-content:space-between}
 body.modal-open{overflow:hidden}
 @keyframes modalFade{from{opacity:0}to{opacity:1}}
 @keyframes modalPop{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
