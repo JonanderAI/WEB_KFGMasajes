@@ -47,7 +47,7 @@ ul,ol{padding:0;list-style:none}
 .nav{display:flex;align-items:center;gap:clamp(20px,3vw,32px);font-size:clamp(16px,1.6vw,18px);white-space:nowrap}
 .nav a{text-decoration:none;transition:color .25s}
 .nav a:hover{color:var(--lago)}
-.hero__title{font-weight:500;font-size:clamp(52px,7vw,112px);line-height:.95;letter-spacing:-.04em}
+.hero__title{font-weight:500;font-size:clamp(52px,7vw,112px);line-height:.95;letter-spacing:-.04em;text-wrap:balance}
 .light{font-weight:300}
 .accent{color:var(--lago)}
 .hero__row{display:flex;flex-direction:column;align-items:flex-start;gap:28px 40px}
@@ -304,7 +304,8 @@ ul,ol{padding:0;list-style:none}
   .topbar{gap:12px}
   .topbar .logo{--logo:112px!important}
   .nav{gap:14px;font-size:15px}
-  .hero__title{font-size:48px}
+  .hero__title{font-size:60px}
+  .hero__break{display:none}
 }
 
 /* ---------- Modal servicio ---------- */
