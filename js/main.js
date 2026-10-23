@@ -67,7 +67,7 @@
       theme: 'cristal',
       badgeIcon: 'kfg-drenaje',
       badgeClass: 'badge--white',
-      title: 'Masaje drenaje linfático',
+      title: 'Drenaje linfático',
       tagline: 'Depura · Desinflama · Activa tu bienestar',
       desc: 'Técnica suave y rítmica que estimula el sistema linfático para ayudar a eliminar líquidos retenidos, reducir la hinchazón y favorecer el bienestar general.',
       idealPara: ['Piernas cansadas', 'Retención de líquidos', 'Hinchazón', 'Circulación', 'Bienestar'],
@@ -77,7 +77,23 @@
         'Disminuye la hinchazón',
         'Mejora la circulación linfática'
       ],
-      whatsappText: 'Hola, me gustaría pedir cita para: Masaje drenaje linfático.'
+      whatsappText: 'Hola, me gustaría pedir cita para: Drenaje linfático.'
+    },
+    relajante: {
+      theme: 'espuma',
+      badgeIcon: 'kfg-relajante',
+      badgeClass: 'badge--white',
+      title: 'Masaje relajante',
+      tagline: 'Desconecta · Reduce el estrés · Recupera tu calma',
+      desc: 'Masaje suave y envolvente que ayuda a aliviar el estrés, reducir la tensión acumulada y favorecer un estado profundo de relajación y bienestar.',
+      idealPara: ['Estrés diario', 'Cuello y hombros', 'Espalda', 'Descanso', 'Bienestar'],
+      benefits: [
+        'Ayuda a reducir el estrés',
+        'Disminuye la tensión muscular',
+        'Favorece la relajación profunda',
+        'Mejora el descanso y la calma'
+      ],
+      whatsappText: 'Hola, me gustaría pedir cita para: Masaje relajante.'
     }
   };
 
