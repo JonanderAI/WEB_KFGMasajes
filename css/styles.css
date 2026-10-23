@@ -35,7 +35,6 @@ ul,ol{padding:0;list-style:none}
 
 /* logo */
 .logo{display:inline-flex;align-items:flex-end;gap:calc(var(--logo)*.04);line-height:1;text-decoration:none;max-width:100%}
-.topbar .logo{color:var(--lago)}
 .logo__mark{width:calc(var(--logo)*.66);height:auto;aspect-ratio:546.724/229.281;fill:currentColor;display:block}
 .logo__text{font-weight:500;font-size:calc(var(--logo)*.088)}
 
