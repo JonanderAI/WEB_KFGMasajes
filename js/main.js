@@ -62,6 +62,22 @@
         'Mejora la circulación'
       ],
       whatsappText: 'Hola, me gustaría pedir cita para: Masaje descontracturante.'
+    },
+    drenaje: {
+      theme: 'cristal',
+      badgeIcon: 'kfg-drenaje',
+      badgeClass: 'badge--white',
+      title: 'Masaje drenaje linfático',
+      tagline: 'Depura · Desinflama · Activa tu bienestar',
+      desc: 'Técnica suave y rítmica que estimula el sistema linfático para ayudar a eliminar líquidos retenidos, reducir la hinchazón y favorecer el bienestar general.',
+      idealPara: ['Piernas cansadas', 'Retención de líquidos', 'Hinchazón', 'Circulación', 'Bienestar'],
+      benefits: [
+        'Reduce la retención de líquidos',
+        'Favorece la eliminación de toxinas',
+        'Disminuye la hinchazón',
+        'Mejora la circulación linfática'
+      ],
+      whatsappText: 'Hola, me gustaría pedir cita para: Masaje drenaje linfático.'
     }
   };
 
