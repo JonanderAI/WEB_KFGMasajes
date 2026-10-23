@@ -48,6 +48,23 @@
 
   /* ---- Modal de servicio (mismo estilo que su tarjeta, animación de expansión) ---- */
   var SERVICES = {
+    deportivo: {
+      theme: 'lago',
+      badgeIcon: 'kfg-deportivo',
+      badgeClass: 'badge--glass',
+      title: 'Masaje deportivo',
+      tagline: 'Prepara · Recupera · Mejora tu rendimiento',
+      desc: 'Masaje orientado a personas activas y deportistas que ayuda a descargar la musculatura, prevenir lesiones y favorecer la recuperación antes y después del esfuerzo.',
+      idealPara: ['Precompetición', 'Postcompetición', 'Piernas', 'Espalda', 'Sobrecargas deportivas'],
+      benefits: [
+        'Reduce la fatiga muscular',
+        'Ayuda a prevenir lesiones',
+        'Favorece la recuperación tras el ejercicio',
+        'Mejora la movilidad y el rendimiento',
+        'Activa la circulación y oxigenación'
+      ],
+      whatsappText: 'Hola, me gustaría pedir cita para: Masaje deportivo.'
+    },
     descontracturante: {
       theme: 'cielo',
       badgeIcon: 'kfg-descontracturante',

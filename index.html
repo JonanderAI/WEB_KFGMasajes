@@ -168,57 +168,40 @@
 </header>
 
 <main>
-<!-- ============ ESPECIALIDADES ============ -->
-<section id="especialidades" class="section section--white">
-  <div class="wrap">
-    <div class="section__head">
-      <h2 class="h2">Especialidades</h2>
-      <p class="section__sub">Las técnicas con las que trabajamos cada sesión.</p>
-    </div>
-    <div class="grid">
-      <div class="card card--static card--svc card--espuma">
-        <div class="card__top">
-          <span class="badge badge--white"><svg class="ico" style="width:30px"><use href="#kfg-quiromasaje"/></svg></span>
-        </div>
-        <div class="card__body">
-          <h3 class="card__title">Quiromasaje</h3>
-          <p>Masaje manual de tejidos blandos para aliviar la tensión muscular.</p>
-        </div>
-        <ul class="tags"><li>Espalda</li><li>Piernas cansadas</li><li>Circulación</li></ul>
-      </div>
-
-      <div class="card card--static card--svc card--abismo">
-        <div class="card__top">
-          <span class="badge badge--menta"><svg class="ico" style="width:30px"><use href="#kfg-osteopatia"/></svg></span>
-        </div>
-        <div class="card__body">
-          <h3 class="card__title">Osteopatía</h3>
-          <p>Terapia manual sobre articulaciones y tejidos para trabajar la movilidad.</p>
-        </div>
-        <ul class="tags"><li>Postura</li><li>Movilidad</li><li>Dolor de espalda</li></ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ SERVICIOS ============ -->
-<section id="servicios" class="section section--espuma">
+<section id="servicios" class="section section--white">
   <div class="wrap">
     <div class="section__head">
       <h2 class="h2">Servicios</h2>
       <p class="section__sub">Técnicas adaptadas a lo que tu cuerpo necesita en cada sesión, en nuestro centro de Sodupe.</p>
     </div>
+    <div class="specialties">
+      <p class="specialties__label">Técnicas con las que trabajamos cada sesión</p>
+      <div class="specialties__list">
+        <div class="specialty">
+          <span class="specialty__ico"><svg class="ico" style="width:24px"><use href="#kfg-quiromasaje"/></svg></span>
+          <div><b>Quiromasaje</b><div>Manipulación manual de tejidos blandos para liberar tensión</div></div>
+        </div>
+        <div class="specialty">
+          <span class="specialty__ico"><svg class="ico" style="width:24px"><use href="#kfg-osteopatia"/></svg></span>
+          <div><b>Osteopatía</b><div>Terapia manual sobre articulaciones para mejorar la movilidad</div></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="specialties__label specialties__label--grid">Nuestros masajes</p>
     <div class="grid">
-      <div class="card card--static card--svc card--lago">
+      <button type="button" class="card card--static card--svc card--lago card--clickable" data-service="deportivo" aria-haspopup="dialog">
         <div class="card__top">
           <span class="badge badge--glass"><svg class="ico" style="width:30px"><use href="#kfg-deportivo"/></svg></span>
+          <span class="arrow"><svg class="ico" style="width:20px" stroke-width="2.4"><use href="#i-arrow-up-right"/></svg></span>
         </div>
         <div class="card__body">
           <h3 class="card__title">Masaje deportivo</h3>
           <p>Prepara el cuerpo antes del ejercicio y ayuda a recuperarlo después.</p>
         </div>
         <ul class="tags"><li>Antes del deporte</li><li>Recuperación</li><li>Sobrecargas</li></ul>
-      </div>
+      </button>
 
       <button type="button" class="card card--static card--svc card--espuma card--clickable" data-service="relajante" aria-haspopup="dialog">
         <div class="card__top">
