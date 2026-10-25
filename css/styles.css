@@ -44,9 +44,10 @@ ul,ol{padding:0;list-style:none}
 .hero__veil{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,var(--portada) 0%,rgba(244,250,248,.75) 45%,rgba(244,250,248,.1) 100%),linear-gradient(180deg,rgba(244,250,248,0) 70%,var(--portada) 100%)}
 .hero__inner{position:relative;display:flex;flex-direction:column;flex:1;width:100%}
 .topbar{max-width:1300px;width:100%;margin:0 auto clamp(40px,6vw,80px);display:flex;justify-content:space-between;align-items:center;gap:16px 24px}
-.nav{display:flex;align-items:center;gap:clamp(20px,3vw,32px);font-size:clamp(16px,1.6vw,18px);white-space:nowrap}
+.nav{display:flex;align-items:center;gap:10px;font-size:clamp(16px,1.6vw,18px);white-space:nowrap}
 .nav a{text-decoration:none;transition:color .25s}
 .nav a:hover{color:var(--lago)}
+.nav a:not(:last-child)::after{content:"•";margin-left:10px;color:rgba(10,31,30,.3);font-size:.6em;vertical-align:middle}
 .hero__title{font-weight:500;font-size:clamp(52px,7vw,112px);line-height:.95;letter-spacing:-.04em;text-wrap:balance}
 .light{font-weight:300}
 .accent{color:var(--lago)}
