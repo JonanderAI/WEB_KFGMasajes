@@ -6,34 +6,6 @@
   var today = (new Date().getDay() + 6) % 7; // 0 = lunes
   if (days[today]) days[today].classList.add('is-today');
 
-  /* ---- Línea de los divisores: empieza justo tras la última palabra ---- */
-  function positionDividerLines() {
-    document.querySelectorAll('.section__divider').forEach(function (p) {
-      var span = p.querySelector('span');
-      var line = p.querySelector('.section__divider__line');
-      if (!span || !line) return;
-      var range = document.createRange();
-      range.selectNodeContents(span);
-      var rects = range.getClientRects();
-      if (!rects.length) return;
-      var lastRect = rects[rects.length - 1];
-      var containerRect = p.getBoundingClientRect();
-      var gap = 16;
-      var left = lastRect.right - containerRect.left + gap;
-      var width = containerRect.width - left;
-      if (width < 24) { line.style.display = 'none'; return; }
-      line.style.display = 'block';
-      line.style.left = left + 'px';
-      line.style.width = width + 'px';
-      line.style.top = (lastRect.top - containerRect.top + lastRect.height / 2 - 1) + 'px';
-    });
-  }
-  positionDividerLines();
-  window.addEventListener('resize', positionDividerLines);
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(positionDividerLines);
-  }
-
   /* ---- Barra fija de contacto en móvil: aparece al pasar la portada ---- */
   var dock = document.getElementById('dock');
   var hero = document.querySelector('.hero');
