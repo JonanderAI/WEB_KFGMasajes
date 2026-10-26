@@ -15,6 +15,40 @@
     }, { threshold: 0 }).observe(hero);
   }
 
+  /* ---- Eventos de Analytics / Google Tag Manager ----
+     Se envían al dataLayer para configurarlos como disparadores
+     "Evento personalizado" en GTM (nombre del evento = event):
+       - solicita_cita {canal: 'whatsapp'|'llamada', ubicacion}
+       - click_red_social {red: 'instagram'|'facebook', ubicacion}
+       - ver_servicio {servicio, servicio_nombre} */
+  function trackEvent(name, params) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({ event: name }, params || {}));
+  }
+
+  function trackLocation(el) {
+    if (el.closest('#dock')) return 'dock';
+    if (el.closest('#service-modal')) return 'modal';
+    if (el.closest('footer')) return 'footer';
+    var sec = el.closest('section[id]');
+    return sec ? sec.id : 'otro';
+  }
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('wa.me/') !== -1) {
+      trackEvent('solicita_cita', { canal: 'whatsapp', ubicacion: trackLocation(a) });
+    } else if (href.indexOf('tel:') === 0) {
+      trackEvent('solicita_cita', { canal: 'llamada', ubicacion: trackLocation(a) });
+    } else if (href.indexOf('instagram.com') !== -1) {
+      trackEvent('click_red_social', { red: 'instagram', ubicacion: trackLocation(a) });
+    } else if (href.indexOf('facebook.com') !== -1) {
+      trackEvent('click_red_social', { red: 'facebook', ubicacion: trackLocation(a) });
+    }
+  });
+
   /* ---- Aparición suave al hacer scroll ---- */
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if ('IntersectionObserver' in window && !reduce) {
@@ -127,6 +161,7 @@
     var modalCta = document.getElementById('modal-cta');
     var lastFocused = null;
     var lastOrigin = null;
+    var historyPushed = false;
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function openModal(data, originEl) {
@@ -175,9 +210,22 @@
       }
 
       modalPanel.focus();
+
+      history.pushState({ kfgModal: true }, '', location.href);
+      historyPushed = true;
     }
 
     function closeModal() {
+      if (modal.hidden || modal.classList.contains('is-closing')) return;
+      if (historyPushed) {
+        historyPushed = false;
+        history.back();
+        return;
+      }
+      runCloseAnimation();
+    }
+
+    function runCloseAnimation() {
       function finish() {
         modal.hidden = true;
         modal.classList.remove('is-closing');
@@ -220,8 +268,12 @@
 
     document.querySelectorAll('[data-service]').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        var data = SERVICES[btn.getAttribute('data-service')];
-        if (data) openModal(data, btn);
+        var key = btn.getAttribute('data-service');
+        var data = SERVICES[key];
+        if (data) {
+          trackEvent('ver_servicio', { servicio: key, servicio_nombre: data.title });
+          openModal(data, btn);
+        }
       });
     });
 
@@ -231,6 +283,13 @@
 
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && !modal.hidden) closeModal();
+    });
+
+    window.addEventListener('popstate', function () {
+      if (!modal.hidden) {
+        historyPushed = false;
+        runCloseAnimation();
+      }
     });
   }
 
