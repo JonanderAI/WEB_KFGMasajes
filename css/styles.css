@@ -98,7 +98,7 @@ ul,ol{padding:0;list-style:none}
 .specialties{margin-bottom:clamp(32px,4vw,44px)}
 
 /* servicio a domicilio */
-.domicilio{display:flex;flex-wrap:wrap;align-items:center;gap:48px;margin-top:clamp(32px,4vw,44px);padding:clamp(32px,4vw,56px);border-radius:var(--r-card);background:linear-gradient(135deg,#0A1F1E 0%,#163B39 100%);color:#fff}
+.domicilio{display:flex;flex-wrap:wrap;align-items:center;gap:48px;margin-top:clamp(32px,4vw,44px);padding:clamp(32px,4vw,56px);border-radius:var(--r-card);background:radial-gradient(120% 140% at 0% 0%,#2A6B64 0%,#123634 42%,#0A1F1E 78%);color:#fff}
 .domicilio__main{flex:1 1 360px}
 .domicilio__title{font-weight:500;font-size:clamp(30px,4vw,46px);letter-spacing:-.025em;line-height:1.1;margin-bottom:20px}
 .domicilio__desc{font-weight:300;font-size:17px;line-height:1.55;color:rgba(255,255,255,.75);max-width:440px;margin-bottom:32px}
@@ -106,7 +106,7 @@ ul,ol{padding:0;list-style:none}
 .domicilio__cta:hover{transform:translateY(-3px)}
 .domicilio__cta-dot{width:40px;height:40px;border-radius:50%;background:var(--lago);color:#fff;display:flex;align-items:center;justify-content:center;flex:none}
 .domicilio__grid{flex:1 1 360px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.domicilio__tile{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.domicilio__tile{background:rgba(255,255,255,.06);border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:10px}
 .domicilio__tile--wide{grid-column:1 / -1}
 .domicilio__tile-ico{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);color:var(--menta);display:flex;align-items:center;justify-content:center}
 .domicilio__tile b{font-size:16px;font-weight:600}
