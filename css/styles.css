@@ -100,7 +100,6 @@ ul,ol{padding:0;list-style:none}
 /* servicio a domicilio */
 .domicilio{display:flex;flex-wrap:wrap;align-items:center;gap:48px;margin-top:clamp(32px,4vw,44px);padding:clamp(32px,4vw,56px);border-radius:var(--r-card);background:linear-gradient(135deg,#0A1F1E 0%,#163B39 100%);color:#fff}
 .domicilio__main{flex:1 1 360px}
-.domicilio__badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px 8px 14px;border-radius:var(--r-btn);background:rgba(255,255,255,.12);color:var(--menta);font-size:13px;font-weight:600;margin-bottom:20px}
 .domicilio__title{font-weight:500;font-size:clamp(30px,4vw,46px);letter-spacing:-.025em;line-height:1.1;margin-bottom:20px}
 .domicilio__desc{font-weight:300;font-size:17px;line-height:1.55;color:rgba(255,255,255,.75);max-width:440px;margin-bottom:32px}
 .domicilio__cta{display:inline-flex;align-items:center;gap:16px;background:#fff;color:var(--abismo);font-weight:500;font-size:17px;padding:8px 8px 8px 26px;border-radius:var(--r-btn);text-decoration:none;transition:transform .35s var(--ease)}
