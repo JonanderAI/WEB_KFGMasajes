@@ -96,6 +96,27 @@ ul,ol{padding:0;list-style:none}
   .grid{grid-template-columns:1fr}
 }
 .specialties{margin-bottom:clamp(32px,4vw,44px)}
+
+/* servicio a domicilio */
+.domicilio{display:flex;flex-wrap:wrap;align-items:center;gap:48px;margin-top:clamp(32px,4vw,44px);padding:clamp(32px,4vw,56px);border-radius:var(--r-card);background:linear-gradient(135deg,#0A1F1E 0%,#163B39 100%);color:#fff}
+.domicilio__main{flex:1 1 360px}
+.domicilio__badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px 8px 14px;border-radius:var(--r-btn);background:rgba(255,255,255,.12);color:var(--menta);font-size:13px;font-weight:600;margin-bottom:20px}
+.domicilio__title{font-weight:500;font-size:clamp(30px,4vw,46px);letter-spacing:-.025em;line-height:1.1;margin-bottom:20px}
+.domicilio__desc{font-weight:300;font-size:17px;line-height:1.55;color:rgba(255,255,255,.75);max-width:440px;margin-bottom:32px}
+.domicilio__cta{display:inline-flex;align-items:center;gap:16px;background:#fff;color:var(--abismo);font-weight:500;font-size:17px;padding:8px 8px 8px 26px;border-radius:var(--r-btn);text-decoration:none;transition:transform .35s var(--ease)}
+.domicilio__cta:hover{transform:translateY(-3px)}
+.domicilio__cta-dot{width:40px;height:40px;border-radius:50%;background:var(--lago);color:#fff;display:flex;align-items:center;justify-content:center;flex:none}
+.domicilio__grid{flex:1 1 360px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.domicilio__tile{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.domicilio__tile--wide{grid-column:1 / -1}
+.domicilio__tile-ico{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);color:var(--menta);display:flex;align-items:center;justify-content:center}
+.domicilio__tile b{font-size:16px;font-weight:600}
+.domicilio__tile p{font-size:14px;line-height:1.4;color:rgba(255,255,255,.65)}
+@media (max-width:720px){
+  .domicilio{padding:28px}
+  .domicilio__grid{grid-template-columns:1fr}
+  .domicilio__tile--wide{grid-column:auto}
+}
 .section__divider{font-weight:500;font-size:clamp(30px,3.2vw,38px);letter-spacing:-.02em;margin-bottom:28px;line-height:1.3}
 .card{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;border-radius:var(--r-card);padding:32px;gap:28px;transition:transform .35s var(--ease),box-shadow .35s}
 .card--clickable{appearance:none;-webkit-appearance:none;border:none;background:none;font:inherit;color:inherit;text-align:left;width:100%;cursor:pointer}
