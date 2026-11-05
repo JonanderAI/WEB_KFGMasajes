@@ -98,7 +98,7 @@ ul,ol{padding:0;list-style:none}
 .specialties{margin-bottom:clamp(32px,4vw,44px)}
 
 /* servicio a domicilio */
-.domicilio{display:flex;flex-wrap:wrap;align-items:center;gap:48px;margin-top:clamp(32px,4vw,44px);padding:clamp(32px,4vw,56px);border-radius:var(--r-card);background:radial-gradient(120% 140% at 0% 0%,#2A6B64 0%,#123634 42%,#0A1F1E 78%);color:#fff}
+.domicilio{display:flex;flex-wrap:wrap;align-items:center;gap:48px;padding:clamp(32px,4vw,56px);border-radius:var(--r-card);background:radial-gradient(120% 140% at 0% 0%,#2A6B64 0%,#123634 42%,#0A1F1E 78%);color:#fff}
 .domicilio__main{flex:1 1 360px;display:flex;flex-direction:column;align-items:flex-start;gap:clamp(32px,4vw,44px)}
 .domicilio__text{display:flex;flex-direction:column;gap:clamp(14px,1.8vw,22px)}
 .domicilio__title{font-weight:500;font-size:clamp(30px,4vw,46px);letter-spacing:-.025em;line-height:1.1}
