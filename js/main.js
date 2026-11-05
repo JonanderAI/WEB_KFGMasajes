@@ -53,7 +53,7 @@
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if ('IntersectionObserver' in window && !reduce) {
     document.documentElement.classList.add('js');
-    var targets = document.querySelectorAll('.section__head, .card, .hours, .rule, .map');
+    var targets = document.querySelectorAll('.section__head, .card, .hours, .rule, .map, .domicilio, .domicilio__tile');
     var ro = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (!en.isIntersecting) return;
@@ -69,12 +69,13 @@
     targets.forEach(function (el) {
       el.classList.add('reveal');
       var col = 0;
-      if (el.classList.contains('card') && el.parentElement) {
-        var siblingCards = Array.prototype.filter.call(el.parentElement.children, function (c) {
-          return c.classList.contains('card');
+      var staggerClass = el.classList.contains('card') ? 'card' : (el.classList.contains('domicilio__tile') ? 'domicilio__tile' : null);
+      if (staggerClass && el.parentElement) {
+        var siblings = Array.prototype.filter.call(el.parentElement.children, function (c) {
+          return c.classList.contains(staggerClass);
         });
         var colCount = getComputedStyle(el.parentElement).gridTemplateColumns.split(' ').length || 1;
-        col = siblingCards.indexOf(el) % colCount;
+        col = siblings.indexOf(el) % colCount;
       }
       el.style.transitionDelay = (col * 90) + 'ms';
       ro.observe(el);
