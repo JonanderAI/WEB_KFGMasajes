@@ -50,7 +50,7 @@ ul,ol{padding:0;list-style:none}
 .nav a:not(:last-child)::after{content:"•";margin-left:10px;color:rgba(10,31,30,.3);font-size:.6em;vertical-align:middle}
 .hero__title{font-weight:500;font-size:clamp(52px,7vw,112px);line-height:.95;letter-spacing:-.04em;text-wrap:balance}
 .light{font-weight:300}
-.accent{padding-right:.06em;background:linear-gradient(100deg,#7EC0B8 0%,#1A6660 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.accent{padding-right:.06em;background:linear-gradient(100deg,#509792 0%,#185F5A 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero__row{display:flex;flex-direction:column;align-items:flex-start;gap:28px 40px}
 .hero__lead{display:block;font-size:clamp(18px,1.8vw,24px);line-height:1.55;font-weight:300;letter-spacing:normal;max-width:960px;text-wrap:balance;margin-top:clamp(14px,1.8vw,22px)}
 .hero__ctas{display:flex;gap:12px;flex-wrap:wrap}
@@ -86,7 +86,7 @@ ul,ol{padding:0;list-style:none}
 .h2{text-wrap:balance;font-weight:500;font-size:clamp(38px,5.2vw,72px);line-height:1;letter-spacing:-.035em}
 .h2--narrow{max-width:14em}
 .menta{padding-right:.06em;background:linear-gradient(100deg,#ADDDD5 0%,#99D2D3 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.lago{padding-right:.06em;background:linear-gradient(100deg,#7EC0B8 0%,#1A6660 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lago{padding-right:.06em;background:linear-gradient(100deg,#509792 0%,#185F5A 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .cita__photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.3;mix-blend-mode:soft-light;pointer-events:none}
 .centro__photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:.25;mix-blend-mode:soft-light;pointer-events:none}
 
@@ -119,9 +119,9 @@ ul,ol{padding:0;list-style:none}
   .domicilio__tile--wide{grid-column:auto}
   .domicilio__tile{padding:18px}
   .domicilio__cta--desktop{display:none}
-  .domicilio__cta--mobile{display:flex;justify-content:space-between;width:100%;margin-top:4px;height:52px;font-size:15px;padding:0 9px 0 24px;gap:10px}
-  .domicilio__cta--mobile .domicilio__cta-label{flex:1;text-align:center}
-  .domicilio__cta--mobile .domicilio__cta-dot{width:36px;height:36px}
+  .domicilio__cta--mobile{display:flex;justify-content:space-between;width:100%;margin-top:4px;height:60px;font-size:18px;padding:0 8px 0 24px;gap:16px}
+  .domicilio__cta--mobile .domicilio__cta-label{flex:1;text-align:left}
+  .domicilio__cta--mobile .domicilio__cta-dot{width:46px;height:46px}
 }
 .section__divider{font-weight:500;font-size:clamp(30px,3.2vw,38px);letter-spacing:-.02em;margin-bottom:28px;line-height:1.3}
 .grid + .section__divider{margin-top:clamp(32px,4vw,44px)}
